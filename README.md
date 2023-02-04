@@ -446,6 +446,12 @@ $ sudo cp -v installer/iso/*.iso /dev/sdb; sync
 
 With this image, you won't need to manually create a [temporary working directory](#temporary-working-directory) or [harden the configuration](#harden-configuration), as it was done when creating the image.
 
+If the `nix build` command gives you an error `error: experimental Nix feature 'nix-command' is disabled; use '--extra-experimental-features nix-command' to override`, then build using the command:
+```console
+$ nix build -f yubikey-installer.nix -o installer nixos-yubikey --extra-experimental-features nix-command
+```
+
+
 ## OpenBSD
 
 ```console
